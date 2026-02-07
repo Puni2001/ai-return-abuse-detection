@@ -1,0 +1,12 @@
+{
+  "name": "Test Reminder",
+  "version": "1.0.0",
+  "description": "Remind to run tests after agent completes work",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Remind the user to run relevant tests for the changes made. Suggest specific test commands if applicable."
+  }
+}
