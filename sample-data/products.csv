@@ -1,0 +1,501 @@
+product_id,category,brand,price,return_rate
+PROD10000,Books,Philips,399,0.01
+PROD10001,Home & Kitchen,Boat,1792,0.21
+PROD10002,Books,Levi's,429,0.1
+PROD10003,Toys & Baby Products,Zara,1561,0.16
+PROD10004,Home & Kitchen,Lakme,1648,0.2
+PROD10005,Sports & Fitness,Mamaearth,1012,0.24
+PROD10006,Electronics - Laptop,Samsung,76584,0.09
+PROD10007,Beauty & Personal Care,Zara,906,0.18
+PROD10008,Sports & Fitness,Noise,824,0.2
+PROD10009,Fashion - Clothing,H&M,1071,0.45
+PROD10010,Electronics - Accessories,Realme,360,0.21
+PROD10011,Sports & Fitness,Puma,827,0.19
+PROD10012,Electronics - Laptop,Realme,49839,0.12
+PROD10013,Fashion - Footwear,LG,50,0.37
+PROD10014,Home & Kitchen,Noise,50,0.19
+PROD10015,Beauty & Personal Care,H&M,375,0.19
+PROD10016,Fashion - Footwear,Mamaearth,689,0.32
+PROD10017,Books,OnePlus,362,0.09
+PROD10018,Home & Kitchen,Apple,637,0.24
+PROD10019,Beauty & Personal Care,Prestige,50,0.17
+PROD10020,Electronics - Mobile,Samsung,26725,0.14
+PROD10021,Home & Kitchen,Xiaomi,1661,0.24
+PROD10022,Electronics - Accessories,Sony,520,0.22
+PROD10023,Beauty & Personal Care,Noise,50,0.19
+PROD10024,Beauty & Personal Care,H&M,382,0.21
+PROD10025,Electronics - Laptop,Nike,47218,0.13
+PROD10026,Home & Kitchen,Zara,273,0.17
+PROD10027,Toys & Baby Products,OnePlus,987,0.14
+PROD10028,Fashion - Footwear,Samsung,1019,0.31
+PROD10029,Electronics - Mobile,Sony,12666,0.15
+PROD10030,Fashion - Footwear,Generic Brand,1018,0.39
+PROD10031,Electronics - Mobile,Samsung,29818,0.2
+PROD10032,Books,Realme,297,0.02
+PROD10033,Electronics - Accessories,Boat,182,0.3
+PROD10034,Home & Kitchen,OnePlus,3233,0.22
+PROD10035,Fashion - Clothing,H&M,189,0.37
+PROD10036,Home & Kitchen,Lakme,2313,0.16
+PROD10037,Fashion - Footwear,Mamaearth,50,0.4
+PROD10038,Fashion - Clothing,Adidas,135,0.43
+PROD10039,Electronics - Mobile,Sony,16574,0.19
+PROD10040,Fashion - Footwear,H&M,2090,0.33
+PROD10041,Toys & Baby Products,OnePlus,885,0.18
+PROD10042,Toys & Baby Products,OnePlus,742,0.13
+PROD10043,Books,Levi's,239,0.06
+PROD10044,Electronics - Mobile,LG,3171,0.16
+PROD10045,Fashion - Footwear,Puma,924,0.35
+PROD10046,Electronics - Accessories,Zara,361,0.2
+PROD10047,Electronics - Mobile,Philips,23456,0.17
+PROD10048,Home & Kitchen,H&M,2515,0.25
+PROD10049,Electronics - Accessories,Noise,50,0.27
+PROD10050,Beauty & Personal Care,Puma,729,0.21
+PROD10051,Electronics - Accessories,Adidas,384,0.27
+PROD10052,Electronics - Laptop,Realme,31461,0.12
+PROD10053,Fashion - Clothing,Lakme,1105,0.36
+PROD10054,Fashion - Footwear,Philips,2324,0.31
+PROD10055,Electronics - Mobile,OnePlus,22450,0.11
+PROD10056,Electronics - Accessories,Zara,248,0.28
+PROD10057,Toys & Baby Products,Sony,645,0.12
+PROD10058,Beauty & Personal Care,Generic Brand,732,0.17
+PROD10059,Sports & Fitness,H&M,1980,0.24
+PROD10060,Electronics - Laptop,Generic Brand,35416,0.16
+PROD10061,Fashion - Clothing,Noise,707,0.39
+PROD10062,Electronics - Laptop,Apple,22873,0.1
+PROD10063,Fashion - Clothing,Levi's,201,0.43
+PROD10064,Beauty & Personal Care,Sony,925,0.15
+PROD10065,Books,Noise,571,0.07
+PROD10066,Home & Kitchen,Zara,1891,0.19
+PROD10067,Beauty & Personal Care,Lakme,1001,0.2
+PROD10068,Electronics - Mobile,Nike,17893,0.1
+PROD10069,Electronics - Accessories,Sony,306,0.24
+PROD10070,Home & Kitchen,Realme,2542,0.16
+PROD10071,Electronics - Laptop,Sony,75760,0.12
+PROD10072,Electronics - Accessories,Nike,489,0.29
+PROD10073,Beauty & Personal Care,Samsung,1225,0.13
+PROD10074,Home & Kitchen,Mamaearth,50,0.22
+PROD10075,Home & Kitchen,Xiaomi,3232,0.18
+PROD10076,Books,LG,317,0.08
+PROD10077,Electronics - Laptop,Zara,39019,0.09
+PROD10078,Sports & Fitness,Noise,1273,0.2
+PROD10079,Sports & Fitness,Mamaearth,50,0.27
+PROD10080,Toys & Baby Products,Apple,690,0.12
+PROD10081,Books,Lakme,371,0.1
+PROD10082,Sports & Fitness,Philips,2382,0.2
+PROD10083,Fashion - Clothing,Samsung,540,0.38
+PROD10084,Beauty & Personal Care,OnePlus,276,0.19
+PROD10085,Books,Prestige,199,0.08
+PROD10086,Books,Mamaearth,483,0.09
+PROD10087,Toys & Baby Products,Zara,964,0.12
+PROD10088,Toys & Baby Products,Levi's,535,0.12
+PROD10089,Electronics - Accessories,Apple,653,0.29
+PROD10090,Electronics - Laptop,Lakme,46941,0.14
+PROD10091,Electronics - Accessories,Samsung,790,0.24
+PROD10092,Sports & Fitness,Puma,638,0.19
+PROD10093,Books,Samsung,234,0.02
+PROD10094,Beauty & Personal Care,OnePlus,443,0.13
+PROD10095,Electronics - Accessories,Whirlpool,60,0.25
+PROD10096,Beauty & Personal Care,Generic Brand,718,0.13
+PROD10097,Electronics - Accessories,Apple,578,0.28
+PROD10098,Books,Adidas,301,0.1
+PROD10099,Sports & Fitness,H&M,1012,0.24
+PROD10100,Fashion - Footwear,Noise,367,0.39
+PROD10101,Sports & Fitness,Nike,863,0.24
+PROD10102,Sports & Fitness,Samsung,925,0.24
+PROD10103,Beauty & Personal Care,Generic Brand,279,0.14
+PROD10104,Electronics - Laptop,Samsung,41774,0.16
+PROD10105,Fashion - Footwear,Levi's,1823,0.31
+PROD10106,Electronics - Mobile,Levi's,30089,0.17
+PROD10107,Beauty & Personal Care,Prestige,669,0.15
+PROD10108,Electronics - Laptop,Boat,50151,0.14
+PROD10109,Fashion - Footwear,H&M,1440,0.38
+PROD10110,Electronics - Accessories,Whirlpool,50,0.3
+PROD10111,Fashion - Footwear,Realme,1478,0.31
+PROD10112,Fashion - Footwear,Samsung,1548,0.39
+PROD10113,Electronics - Laptop,Levi's,94264,0.08
+PROD10114,Electronics - Mobile,Philips,13461,0.11
+PROD10115,Home & Kitchen,Whirlpool,2452,0.16
+PROD10116,Books,Sony,293,0.05
+PROD10117,Toys & Baby Products,OnePlus,215,0.13
+PROD10118,Home & Kitchen,Boat,3714,0.23
+PROD10119,Electronics - Mobile,Adidas,21015,0.14
+PROD10120,Sports & Fitness,Samsung,1832,0.26
+PROD10121,Toys & Baby Products,OnePlus,345,0.18
+PROD10122,Fashion - Footwear,Zara,2622,0.32
+PROD10123,Electronics - Mobile,Whirlpool,3785,0.15
+PROD10124,Electronics - Laptop,Generic Brand,56737,0.12
+PROD10125,Home & Kitchen,Noise,5285,0.15
+PROD10126,Beauty & Personal Care,LG,203,0.14
+PROD10127,Beauty & Personal Care,Adidas,373,0.15
+PROD10128,Toys & Baby Products,Lakme,849,0.16
+PROD10129,Fashion - Footwear,Puma,1097,0.4
+PROD10130,Books,Philips,50,0.06
+PROD10131,Beauty & Personal Care,Boat,627,0.16
+PROD10132,Electronics - Laptop,Apple,23753,0.16
+PROD10133,Books,Lakme,394,0.02
+PROD10134,Home & Kitchen,Boat,620,0.15
+PROD10135,Home & Kitchen,Samsung,4324,0.19
+PROD10136,Home & Kitchen,OnePlus,825,0.24
+PROD10137,Electronics - Mobile,Mamaearth,12423,0.18
+PROD10138,Sports & Fitness,Xiaomi,1850,0.23
+PROD10139,Toys & Baby Products,Sony,184,0.11
+PROD10140,Sports & Fitness,Zara,1381,0.27
+PROD10141,Fashion - Footwear,Apple,2545,0.36
+PROD10142,Home & Kitchen,Whirlpool,50,0.17
+PROD10143,Beauty & Personal Care,Xiaomi,673,0.16
+PROD10144,Fashion - Clothing,Realme,929,0.44
+PROD10145,Electronics - Accessories,Realme,734,0.28
+PROD10146,Electronics - Accessories,Prestige,128,0.23
+PROD10147,Fashion - Footwear,Boat,443,0.4
+PROD10148,Fashion - Footwear,H&M,1917,0.35
+PROD10149,Beauty & Personal Care,H&M,718,0.13
+PROD10150,Home & Kitchen,OnePlus,2375,0.17
+PROD10151,Electronics - Mobile,Mamaearth,17771,0.19
+PROD10152,Toys & Baby Products,Boat,459,0.19
+PROD10153,Fashion - Footwear,Levi's,1685,0.31
+PROD10154,Home & Kitchen,Xiaomi,2439,0.18
+PROD10155,Electronics - Mobile,Lakme,9285,0.16
+PROD10156,Fashion - Footwear,Levi's,2992,0.32
+PROD10157,Electronics - Accessories,Whirlpool,642,0.28
+PROD10158,Sports & Fitness,OnePlus,246,0.26
+PROD10159,Sports & Fitness,Whirlpool,1725,0.26
+PROD10160,Electronics - Accessories,H&M,207,0.29
+PROD10161,Fashion - Footwear,Apple,2129,0.39
+PROD10162,Electronics - Accessories,Prestige,847,0.29
+PROD10163,Fashion - Footwear,Levi's,843,0.37
+PROD10164,Fashion - Clothing,Xiaomi,1281,0.36
+PROD10165,Toys & Baby Products,Sony,1006,0.1
+PROD10166,Fashion - Clothing,Boat,1211,0.4
+PROD10167,Beauty & Personal Care,Levi's,1358,0.18
+PROD10168,Electronics - Mobile,Whirlpool,13036,0.16
+PROD10169,Electronics - Laptop,Nike,29925,0.08
+PROD10170,Electronics - Mobile,Lakme,7883,0.16
+PROD10171,Fashion - Footwear,Samsung,847,0.36
+PROD10172,Books,Realme,284,0.02
+PROD10173,Electronics - Mobile,LG,17729,0.17
+PROD10174,Electronics - Laptop,Samsung,50533,0.17
+PROD10175,Sports & Fitness,Lakme,1861,0.26
+PROD10176,Electronics - Laptop,Puma,45260,0.12
+PROD10177,Fashion - Clothing,Mamaearth,1526,0.39
+PROD10178,Beauty & Personal Care,LG,494,0.15
+PROD10179,Electronics - Accessories,Noise,1316,0.23
+PROD10180,Toys & Baby Products,Lakme,1112,0.14
+PROD10181,Electronics - Accessories,Mamaearth,242,0.23
+PROD10182,Fashion - Footwear,Levi's,643,0.37
+PROD10183,Toys & Baby Products,Xiaomi,1041,0.15
+PROD10184,Beauty & Personal Care,Levi's,510,0.19
+PROD10185,Electronics - Mobile,Generic Brand,20712,0.16
+PROD10186,Toys & Baby Products,Puma,1036,0.11
+PROD10187,Electronics - Mobile,Puma,14417,0.17
+PROD10188,Electronics - Laptop,OnePlus,28064,0.14
+PROD10189,Beauty & Personal Care,Adidas,50,0.14
+PROD10190,Electronics - Accessories,Lakme,366,0.3
+PROD10191,Fashion - Clothing,Xiaomi,1228,0.42
+PROD10192,Fashion - Clothing,Zara,907,0.39
+PROD10193,Electronics - Laptop,Realme,20085,0.11
+PROD10194,Fashion - Footwear,Zara,1638,0.39
+PROD10195,Beauty & Personal Care,LG,754,0.17
+PROD10196,Electronics - Accessories,Adidas,234,0.24
+PROD10197,Electronics - Mobile,Boat,16229,0.12
+PROD10198,Electronics - Laptop,Puma,46164,0.16
+PROD10199,Books,Levi's,71,0.05
+PROD10200,Beauty & Personal Care,Samsung,743,0.13
+PROD10201,Beauty & Personal Care,Apple,824,0.18
+PROD10202,Fashion - Clothing,LG,1341,0.42
+PROD10203,Electronics - Accessories,Xiaomi,816,0.22
+PROD10204,Electronics - Accessories,Levi's,86,0.21
+PROD10205,Electronics - Mobile,Samsung,7497,0.14
+PROD10206,Books,LG,403,0.08
+PROD10207,Fashion - Footwear,Boat,1911,0.36
+PROD10208,Electronics - Accessories,Philips,654,0.26
+PROD10209,Electronics - Laptop,Levi's,122054,0.14
+PROD10210,Books,Levi's,414,0.1
+PROD10211,Electronics - Mobile,Philips,24084,0.15
+PROD10212,Electronics - Mobile,Puma,22632,0.1
+PROD10213,Books,Whirlpool,430,0.04
+PROD10214,Sports & Fitness,Realme,947,0.23
+PROD10215,Fashion - Footwear,Boat,2107,0.33
+PROD10216,Sports & Fitness,Xiaomi,581,0.2
+PROD10217,Electronics - Accessories,LG,428,0.29
+PROD10218,Electronics - Accessories,Samsung,354,0.27
+PROD10219,Fashion - Footwear,Xiaomi,1565,0.36
+PROD10220,Electronics - Laptop,Levi's,91293,0.16
+PROD10221,Electronics - Laptop,Whirlpool,7654,0.15
+PROD10222,Toys & Baby Products,LG,1143,0.16
+PROD10223,Electronics - Mobile,LG,2098,0.16
+PROD10224,Fashion - Clothing,Samsung,564,0.36
+PROD10225,Home & Kitchen,Whirlpool,3633,0.23
+PROD10226,Beauty & Personal Care,Samsung,625,0.19
+PROD10227,Books,Xiaomi,84,0.02
+PROD10228,Electronics - Accessories,Prestige,285,0.27
+PROD10229,Electronics - Accessories,Levi's,703,0.27
+PROD10230,Toys & Baby Products,Noise,434,0.12
+PROD10231,Toys & Baby Products,Boat,908,0.16
+PROD10232,Fashion - Footwear,Mamaearth,1536,0.34
+PROD10233,Electronics - Laptop,Zara,31967,0.16
+PROD10234,Fashion - Clothing,Boat,1871,0.44
+PROD10235,Books,Whirlpool,426,0.08
+PROD10236,Home & Kitchen,Prestige,50,0.2
+PROD10237,Sports & Fitness,OnePlus,1349,0.17
+PROD10238,Fashion - Footwear,Realme,970,0.36
+PROD10239,Electronics - Laptop,Apple,62048,0.11
+PROD10240,Electronics - Laptop,Whirlpool,29149,0.12
+PROD10241,Fashion - Footwear,Whirlpool,1408,0.31
+PROD10242,Books,Puma,400,0.07
+PROD10243,Electronics - Laptop,Xiaomi,62315,0.09
+PROD10244,Fashion - Clothing,Lakme,199,0.38
+PROD10245,Beauty & Personal Care,Levi's,466,0.14
+PROD10246,Toys & Baby Products,Adidas,562,0.19
+PROD10247,Fashion - Footwear,Puma,977,0.33
+PROD10248,Toys & Baby Products,Levi's,1682,0.11
+PROD10249,Toys & Baby Products,Generic Brand,1002,0.15
+PROD10250,Electronics - Laptop,Levi's,19782,0.07
+PROD10251,Sports & Fitness,Samsung,1934,0.19
+PROD10252,Books,Adidas,724,0.08
+PROD10253,Beauty & Personal Care,Xiaomi,1012,0.22
+PROD10254,Fashion - Footwear,Puma,284,0.35
+PROD10255,Toys & Baby Products,Prestige,557,0.13
+PROD10256,Home & Kitchen,Philips,3900,0.24
+PROD10257,Sports & Fitness,Samsung,633,0.24
+PROD10258,Fashion - Footwear,Lakme,1855,0.4
+PROD10259,Fashion - Clothing,Adidas,1187,0.42
+PROD10260,Electronics - Mobile,Puma,7584,0.18
+PROD10261,Fashion - Clothing,Adidas,770,0.42
+PROD10262,Electronics - Laptop,H&M,50,0.09
+PROD10263,Books,Philips,95,0.01
+PROD10264,Electronics - Laptop,Apple,39948,0.13
+PROD10265,Fashion - Footwear,Adidas,501,0.37
+PROD10266,Home & Kitchen,H&M,4448,0.21
+PROD10267,Beauty & Personal Care,OnePlus,50,0.15
+PROD10268,Electronics - Mobile,Samsung,11479,0.15
+PROD10269,Electronics - Mobile,Whirlpool,16045,0.14
+PROD10270,Electronics - Mobile,Prestige,26530,0.17
+PROD10271,Fashion - Footwear,Nike,351,0.31
+PROD10272,Electronics - Laptop,Prestige,68263,0.08
+PROD10273,Fashion - Footwear,Nike,1508,0.34
+PROD10274,Electronics - Accessories,Whirlpool,205,0.27
+PROD10275,Sports & Fitness,Lakme,1569,0.26
+PROD10276,Toys & Baby Products,Philips,899,0.2
+PROD10277,Electronics - Mobile,Mamaearth,10198,0.18
+PROD10278,Sports & Fitness,Adidas,1255,0.24
+PROD10279,Books,Mamaearth,222,0.04
+PROD10280,Books,Levi's,322,0.03
+PROD10281,Toys & Baby Products,Samsung,1131,0.12
+PROD10282,Electronics - Laptop,Noise,76720,0.11
+PROD10283,Sports & Fitness,OnePlus,209,0.22
+PROD10284,Toys & Baby Products,Realme,1866,0.11
+PROD10285,Fashion - Clothing,Whirlpool,50,0.37
+PROD10286,Fashion - Footwear,Noise,1378,0.36
+PROD10287,Toys & Baby Products,Realme,1094,0.17
+PROD10288,Fashion - Clothing,Whirlpool,940,0.4
+PROD10289,Electronics - Laptop,Puma,32546,0.15
+PROD10290,Fashion - Clothing,Mamaearth,695,0.4
+PROD10291,Sports & Fitness,Puma,805,0.26
+PROD10292,Sports & Fitness,Zara,728,0.23
+PROD10293,Sports & Fitness,Levi's,1879,0.22
+PROD10294,Electronics - Accessories,Realme,607,0.23
+PROD10295,Electronics - Mobile,Sony,9456,0.1
+PROD10296,Electronics - Laptop,Puma,62991,0.08
+PROD10297,Fashion - Footwear,Mamaearth,1745,0.35
+PROD10298,Books,Generic Brand,462,0.01
+PROD10299,Sports & Fitness,Zara,1703,0.18
+PROD10300,Books,Levi's,134,0.02
+PROD10301,Home & Kitchen,Samsung,1159,0.15
+PROD10302,Fashion - Clothing,Samsung,1173,0.43
+PROD10303,Fashion - Clothing,Nike,1105,0.36
+PROD10304,Toys & Baby Products,Adidas,789,0.11
+PROD10305,Books,Xiaomi,323,0.1
+PROD10306,Books,Whirlpool,555,0.08
+PROD10307,Home & Kitchen,Generic Brand,1112,0.16
+PROD10308,Toys & Baby Products,Realme,1073,0.1
+PROD10309,Home & Kitchen,Xiaomi,1696,0.18
+PROD10310,Sports & Fitness,H&M,1025,0.23
+PROD10311,Electronics - Accessories,Whirlpool,829,0.22
+PROD10312,Electronics - Mobile,Lakme,21603,0.16
+PROD10313,Sports & Fitness,Sony,1850,0.22
+PROD10314,Sports & Fitness,OnePlus,2244,0.26
+PROD10315,Electronics - Mobile,H&M,15168,0.12
+PROD10316,Sports & Fitness,Apple,1745,0.23
+PROD10317,Home & Kitchen,Apple,1534,0.19
+PROD10318,Sports & Fitness,Samsung,1459,0.21
+PROD10319,Fashion - Clothing,Samsung,734,0.41
+PROD10320,Electronics - Accessories,Noise,529,0.29
+PROD10321,Home & Kitchen,OnePlus,2892,0.21
+PROD10322,Home & Kitchen,Levi's,772,0.22
+PROD10323,Sports & Fitness,Noise,2873,0.18
+PROD10324,Toys & Baby Products,Prestige,296,0.11
+PROD10325,Electronics - Mobile,LG,5286,0.18
+PROD10326,Electronics - Laptop,Boat,68162,0.17
+PROD10327,Fashion - Clothing,Nike,1195,0.39
+PROD10328,Toys & Baby Products,Apple,1112,0.14
+PROD10329,Sports & Fitness,Generic Brand,1702,0.24
+PROD10330,Books,Adidas,297,0.01
+PROD10331,Electronics - Laptop,Mamaearth,27054,0.11
+PROD10332,Sports & Fitness,Boat,1260,0.22
+PROD10333,Fashion - Clothing,Generic Brand,461,0.43
+PROD10334,Sports & Fitness,OnePlus,1980,0.19
+PROD10335,Fashion - Clothing,Apple,726,0.38
+PROD10336,Fashion - Footwear,Levi's,839,0.39
+PROD10337,Sports & Fitness,Whirlpool,942,0.18
+PROD10338,Sports & Fitness,Levi's,1530,0.24
+PROD10339,Electronics - Accessories,Generic Brand,330,0.3
+PROD10340,Electronics - Mobile,Sony,8422,0.15
+PROD10341,Books,Puma,348,0.09
+PROD10342,Sports & Fitness,Adidas,1395,0.19
+PROD10343,Sports & Fitness,Noise,794,0.23
+PROD10344,Electronics - Accessories,OnePlus,358,0.22
+PROD10345,Electronics - Mobile,Mamaearth,16856,0.17
+PROD10346,Electronics - Accessories,LG,65,0.27
+PROD10347,Toys & Baby Products,H&M,96,0.16
+PROD10348,Beauty & Personal Care,Samsung,312,0.16
+PROD10349,Electronics - Laptop,Realme,40731,0.16
+PROD10350,Home & Kitchen,LG,2466,0.22
+PROD10351,Beauty & Personal Care,H&M,1190,0.15
+PROD10352,Electronics - Accessories,Apple,757,0.21
+PROD10353,Beauty & Personal Care,Generic Brand,536,0.16
+PROD10354,Beauty & Personal Care,Boat,592,0.15
+PROD10355,Electronics - Accessories,Apple,199,0.29
+PROD10356,Electronics - Mobile,Puma,14851,0.14
+PROD10357,Home & Kitchen,Nike,1567,0.18
+PROD10358,Electronics - Accessories,Samsung,596,0.22
+PROD10359,Fashion - Footwear,H&M,838,0.35
+PROD10360,Beauty & Personal Care,H&M,807,0.21
+PROD10361,Sports & Fitness,LG,2426,0.23
+PROD10362,Sports & Fitness,Samsung,1112,0.26
+PROD10363,Electronics - Laptop,Boat,53034,0.14
+PROD10364,Electronics - Laptop,LG,58802,0.13
+PROD10365,Sports & Fitness,Levi's,879,0.19
+PROD10366,Home & Kitchen,Realme,2336,0.22
+PROD10367,Books,Apple,302,0.06
+PROD10368,Home & Kitchen,Generic Brand,2146,0.15
+PROD10369,Fashion - Clothing,H&M,413,0.45
+PROD10370,Electronics - Laptop,Adidas,45490,0.09
+PROD10371,Electronics - Laptop,Boat,54959,0.17
+PROD10372,Electronics - Laptop,Levi's,74022,0.15
+PROD10373,Toys & Baby Products,Xiaomi,1279,0.13
+PROD10374,Beauty & Personal Care,Realme,1461,0.2
+PROD10375,Fashion - Footwear,Mamaearth,886,0.31
+PROD10376,Books,Xiaomi,474,0.05
+PROD10377,Sports & Fitness,Adidas,1346,0.17
+PROD10378,Electronics - Laptop,Generic Brand,88796,0.13
+PROD10379,Electronics - Laptop,Realme,28834,0.12
+PROD10380,Beauty & Personal Care,Puma,264,0.19
+PROD10381,Fashion - Clothing,Apple,500,0.44
+PROD10382,Fashion - Footwear,Mamaearth,50,0.4
+PROD10383,Sports & Fitness,Zara,779,0.22
+PROD10384,Beauty & Personal Care,LG,296,0.14
+PROD10385,Beauty & Personal Care,LG,660,0.21
+PROD10386,Fashion - Clothing,Nike,970,0.35
+PROD10387,Electronics - Laptop,Samsung,82523,0.15
+PROD10388,Toys & Baby Products,Prestige,1275,0.11
+PROD10389,Fashion - Footwear,Mamaearth,1038,0.35
+PROD10390,Sports & Fitness,Puma,481,0.26
+PROD10391,Beauty & Personal Care,Generic Brand,796,0.16
+PROD10392,Books,H&M,50,0.03
+PROD10393,Toys & Baby Products,Prestige,1715,0.11
+PROD10394,Fashion - Clothing,Adidas,1389,0.44
+PROD10395,Beauty & Personal Care,Boat,412,0.17
+PROD10396,Electronics - Mobile,OnePlus,1294,0.19
+PROD10397,Electronics - Accessories,Xiaomi,906,0.26
+PROD10398,Sports & Fitness,Lakme,1108,0.23
+PROD10399,Electronics - Accessories,H&M,871,0.21
+PROD10400,Electronics - Laptop,LG,13111,0.09
+PROD10401,Books,Samsung,180,0.03
+PROD10402,Toys & Baby Products,Prestige,802,0.11
+PROD10403,Electronics - Laptop,Nike,45939,0.09
+PROD10404,Electronics - Laptop,LG,35998,0.13
+PROD10405,Electronics - Mobile,Philips,19982,0.11
+PROD10406,Electronics - Accessories,Prestige,179,0.23
+PROD10407,Fashion - Footwear,Apple,1386,0.31
+PROD10408,Electronics - Accessories,Whirlpool,536,0.21
+PROD10409,Beauty & Personal Care,Apple,805,0.22
+PROD10410,Home & Kitchen,Zara,3067,0.21
+PROD10411,Electronics - Laptop,Noise,22507,0.12
+PROD10412,Beauty & Personal Care,Apple,50,0.17
+PROD10413,Sports & Fitness,Xiaomi,2222,0.24
+PROD10414,Electronics - Mobile,Samsung,17658,0.14
+PROD10415,Fashion - Clothing,Apple,425,0.44
+PROD10416,Sports & Fitness,Boat,2440,0.26
+PROD10417,Beauty & Personal Care,Mamaearth,646,0.17
+PROD10418,Fashion - Footwear,Samsung,2443,0.38
+PROD10419,Beauty & Personal Care,Philips,627,0.15
+PROD10420,Fashion - Footwear,Adidas,3148,0.33
+PROD10421,Fashion - Footwear,Adidas,2904,0.4
+PROD10422,Electronics - Accessories,Boat,425,0.29
+PROD10423,Fashion - Clothing,LG,1285,0.43
+PROD10424,Sports & Fitness,Lakme,1716,0.19
+PROD10425,Fashion - Footwear,Sony,2594,0.35
+PROD10426,Beauty & Personal Care,Generic Brand,214,0.21
+PROD10427,Electronics - Mobile,LG,20488,0.16
+PROD10428,Electronics - Accessories,Apple,817,0.23
+PROD10429,Fashion - Footwear,Whirlpool,93,0.32
+PROD10430,Fashion - Clothing,Philips,208,0.43
+PROD10431,Electronics - Laptop,Puma,4215,0.1
+PROD10432,Books,Whirlpool,246,0.09
+PROD10433,Sports & Fitness,Apple,1774,0.18
+PROD10434,Electronics - Laptop,Boat,75047,0.09
+PROD10435,Toys & Baby Products,Apple,837,0.17
+PROD10436,Fashion - Footwear,Philips,2802,0.37
+PROD10437,Fashion - Clothing,Apple,109,0.41
+PROD10438,Sports & Fitness,Lakme,50,0.21
+PROD10439,Toys & Baby Products,H&M,772,0.17
+PROD10440,Electronics - Accessories,Samsung,615,0.26
+PROD10441,Books,Lakme,293,0.1
+PROD10442,Electronics - Mobile,Mamaearth,50,0.14
+PROD10443,Toys & Baby Products,Generic Brand,755,0.16
+PROD10444,Beauty & Personal Care,Lakme,78,0.21
+PROD10445,Beauty & Personal Care,H&M,867,0.22
+PROD10446,Sports & Fitness,Mamaearth,1493,0.23
+PROD10447,Books,LG,112,0.01
+PROD10448,Electronics - Accessories,Boat,345,0.21
+PROD10449,Toys & Baby Products,Lakme,270,0.14
+PROD10450,Electronics - Laptop,Lakme,43746,0.08
+PROD10451,Fashion - Footwear,LG,2264,0.33
+PROD10452,Electronics - Accessories,Adidas,204,0.26
+PROD10453,Electronics - Mobile,Xiaomi,19032,0.19
+PROD10454,Electronics - Mobile,Puma,10757,0.18
+PROD10455,Electronics - Accessories,Prestige,262,0.28
+PROD10456,Beauty & Personal Care,Apple,557,0.19
+PROD10457,Beauty & Personal Care,Samsung,185,0.19
+PROD10458,Sports & Fitness,Noise,757,0.22
+PROD10459,Fashion - Footwear,Prestige,541,0.35
+PROD10460,Fashion - Clothing,Nike,1782,0.41
+PROD10461,Electronics - Laptop,Puma,45705,0.1
+PROD10462,Sports & Fitness,Zara,640,0.23
+PROD10463,Toys & Baby Products,Generic Brand,906,0.19
+PROD10464,Electronics - Laptop,LG,42753,0.16
+PROD10465,Electronics - Mobile,Whirlpool,13232,0.17
+PROD10466,Fashion - Clothing,H&M,1107,0.43
+PROD10467,Fashion - Clothing,Prestige,1178,0.44
+PROD10468,Fashion - Footwear,Lakme,1075,0.4
+PROD10469,Toys & Baby Products,Samsung,512,0.14
+PROD10470,Sports & Fitness,Realme,979,0.25
+PROD10471,Beauty & Personal Care,Boat,50,0.19
+PROD10472,Sports & Fitness,Prestige,50,0.24
+PROD10473,Electronics - Accessories,Whirlpool,910,0.21
+PROD10474,Beauty & Personal Care,Boat,1257,0.19
+PROD10475,Beauty & Personal Care,Adidas,500,0.19
+PROD10476,Fashion - Clothing,Prestige,1088,0.41
+PROD10477,Fashion - Footwear,Realme,1749,0.37
+PROD10478,Electronics - Laptop,Zara,106577,0.15
+PROD10479,Toys & Baby Products,Xiaomi,1359,0.13
+PROD10480,Electronics - Accessories,Levi's,461,0.28
+PROD10481,Beauty & Personal Care,Puma,217,0.18
+PROD10482,Toys & Baby Products,H&M,50,0.18
+PROD10483,Sports & Fitness,Apple,1362,0.2
+PROD10484,Fashion - Clothing,Nike,421,0.43
+PROD10485,Books,Samsung,50,0.08
+PROD10486,Fashion - Clothing,LG,476,0.42
+PROD10487,Beauty & Personal Care,Noise,167,0.19
+PROD10488,Fashion - Footwear,Xiaomi,2849,0.4
+PROD10489,Beauty & Personal Care,OnePlus,952,0.18
+PROD10490,Fashion - Footwear,Mamaearth,1493,0.37
+PROD10491,Home & Kitchen,Samsung,4219,0.23
+PROD10492,Fashion - Clothing,Noise,838,0.44
+PROD10493,Sports & Fitness,Generic Brand,510,0.18
+PROD10494,Electronics - Accessories,Generic Brand,956,0.21
+PROD10495,Toys & Baby Products,Zara,1069,0.11
+PROD10496,Fashion - Clothing,Nike,281,0.4
+PROD10497,Sports & Fitness,Lakme,1047,0.19
+PROD10498,Books,Generic Brand,124,0.06
+PROD10499,Electronics - Mobile,Boat,3937,0.11
