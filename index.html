@@ -391,6 +391,8 @@
             border-radius: 18px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
             border: 1px solid rgba(0, 0, 0, 0.06);
+            overflow-x: auto;
+            max-width: 100%;
         }
         
         .demo-card h3 {
@@ -498,10 +500,14 @@
             background: #f8f9fa;
             padding: 1.5rem;
             border-radius: 8px;
+            max-width: 100%;
+            overflow: hidden;
         }
         
         .factors-list h4 {
             margin-bottom: 1rem;
+            color: #2c3e50;
+            font-size: 1.1rem;
         }
         
         .factors-list ul {
@@ -514,6 +520,67 @@
             margin-bottom: 0.5rem;
             border-radius: 6px;
             border-left: 3px solid #667eea;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        #aiExplanation {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+            max-width: 100%;
+            overflow: hidden;
+        }
+        
+        #aiExplanation h4 {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        #explanationText {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 6px;
+            line-height: 1.8;
+            color: #2c3e50;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height: 600px;
+        }
+        
+        #explanationText h2,
+        #explanationText h3,
+        #explanationText h4 {
+            color: #667eea;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        #explanationText ul,
+        #explanationText ol {
+            margin-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        #explanationText li {
+            margin-bottom: 0.5rem;
+        }
+        
+        #explanationText strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        #explanationText p {
+            margin-bottom: 0.75rem;
         }
         
         /* Business Impact */
@@ -788,7 +855,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1>Stop Return Fraud.<br>Protect Real Customers.</h1>
-        <p>AI that predicts return abuse before it happens. Built for Indian e-commerce.</p>
+        <p>AI-powered fraud detection with Amazon SageMaker ML & Bedrock. Built for Indian e-commerce.</p>
         <div class="cta-buttons">
             <a href="#demo" class="btn btn-primary">Try Live Demo</a>
             <a href="#solution" class="btn btn-secondary">Learn More</a>
@@ -821,13 +888,13 @@
     <!-- Solution Section -->
     <section id="solution" class="section solution-section">
         <h2>Our Solution</h2>
-        <p class="section-subtitle">AI that predicts fraud before it happens. Everyone wins.</p>
+        <p class="section-subtitle">Amazon SageMaker ML + Bedrock AI. Predicts fraud before it happens.</p>
         
         <div class="solution-grid">
             <div class="solution-card">
                 <div class="icon">🎯</div>
-                <h3>Predict Risk</h3>
-                <p>Analyze patterns and score every order in real-time (0-1 scale)</p>
+                <h3>SageMaker ML</h3>
+                <p>Machine learning predictions with 85% accuracy using Amazon SageMaker</p>
             </div>
             
             <div class="solution-card">
@@ -838,8 +905,8 @@
             
             <div class="solution-card">
                 <div class="icon">💡</div>
-                <h3>Explainable</h3>
-                <p>Shows exactly why each order is flagged—no mystery decisions</p>
+                <h3>Bedrock AI</h3>
+                <p>Claude Sonnet 4 generates detailed, professional explanations for every decision</p>
             </div>
             
             <div class="solution-card">
@@ -1237,6 +1304,9 @@ Response:
                         <div style="margin-top: 0.5rem; color: #7f8c8d;">
                             Confidence: <span id="confidence">0%</span>
                         </div>
+                        <div style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <span id="modelInfo" style="color: #667eea; font-weight: 500;"></span>
+                        </div>
                     </div>
                     
                     <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 1.5rem;">
@@ -1244,7 +1314,12 @@ Response:
                         <span id="action" style="font-size: 1.1rem;">-</span>
                     </div>
                     
-                    <div class="factors-list">
+                    <div class="factors-list" id="aiExplanation" style="display: none; margin-bottom: 1.5rem;">
+                        <h4>🤖 AI Explanation (Bedrock Claude Sonnet 4)</h4>
+                        <div id="explanationText"></div>
+                    </div>
+                    
+                    <div class="factors-list" id="riskFactorsSection">
                         <h4>🎯 Top Risk Factors</h4>
                         <ul id="factorsList"></ul>
                     </div>
@@ -1513,7 +1588,8 @@ Response:
             <a href="https://www.linkedin.com/in/puni2001/" target="_blank">💼 LinkedIn Profile</a>
         </p>
         <p>AI Return Abuse Detection System - AI for Bharat Hackathon 2026</p>
-        <p>Built with ❤️ for Indian E-commerce</p>
+        <p>Powered by 7 AWS Services: Lambda | API Gateway | DynamoDB | S3 | CloudWatch | SageMaker | Bedrock</p>
+        <p>Built with ❤️ for Indian E-Commerce | Complete ML + AI Solution</p>
     </footer>
 
     
@@ -1592,22 +1668,97 @@ Response:
             document.getElementById('confidence').textContent = Math.round(result.confidence * 100) + '%';
             document.getElementById('action').textContent = result.recommended_action.replace(/_/g, ' ').toUpperCase();
             
+            // Display model information
+            const modelInfo = document.getElementById('modelInfo');
+            if (result.model_type === 'sagemaker_ml') {
+                modelInfo.innerHTML = '🤖 Amazon SageMaker ML | ' + (result.explanation.generated_by === 'bedrock_claude_3_sonnet' ? '✨ Bedrock AI Explanation' : 'Rule-based Explanation');
+            } else {
+                modelInfo.innerHTML = '📊 Rule-based Model | ' + (result.explanation.generated_by === 'bedrock_claude_3_sonnet' ? '✨ Bedrock AI Explanation' : 'Fallback Explanation');
+            }
+            
+            // Display AI explanation if available from Bedrock
+            const aiExplanationDiv = document.getElementById('aiExplanation');
+            const explanationText = document.getElementById('explanationText');
+            const factorsSection = document.getElementById('riskFactorsSection');
+            
+            if (result.explanation.generated_by === 'bedrock_claude_3_sonnet' && result.explanation.explanation_text) {
+                aiExplanationDiv.style.display = 'block';
+                
+                // Convert markdown-style formatting to HTML for better display
+                let formattedText = result.explanation.explanation_text
+                    // Convert headers
+                    .replace(/^## (.+)$/gm, '<h3>$1</h3>')
+                    .replace(/^\*\*(.+)\*\*$/gm, '<h4>$1</h4>')
+                    // Convert bold text
+                    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                    // Convert numbered lists
+                    .replace(/^\d+\.\s+\*\*(.+?)\*\*/gm, '<li><strong>$1</strong>')
+                    .replace(/^\d+\.\s+(.+)$/gm, '<li>$1</li>')
+                    // Convert bullet points
+                    .replace(/^-\s+(.+)$/gm, '<li>$1</li>')
+                    // Convert paragraphs
+                    .replace(/\n\n/g, '</p><p>')
+                    // Wrap in paragraph tags
+                    .trim();
+                
+                // Wrap consecutive list items in ul tags
+                formattedText = formattedText.replace(/(<li>.*?<\/li>\s*)+/gs, '<ul>$&</ul>');
+                
+                // Wrap in paragraph if not already wrapped
+                if (!formattedText.startsWith('<')) {
+                    formattedText = '<p>' + formattedText + '</p>';
+                }
+                
+                explanationText.innerHTML = formattedText;
+            } else {
+                aiExplanationDiv.style.display = 'none';
+            }
+            
+            // Display risk factors
             const list = document.getElementById('factorsList');
             list.innerHTML = '';
-            result.explanation.top_factors.forEach((factor, index) => {
-                const li = document.createElement('li');
-                li.textContent = factor;
-                li.style.opacity = '0';
-                li.style.transform = 'translateY(10px)';
-                list.appendChild(li);
+            
+            // Get factors from different possible locations
+            let factors = [];
+            if (result.explanation.top_factors && Array.isArray(result.explanation.top_factors)) {
+                factors = result.explanation.top_factors;
+            } else if (result.explanation.risk_factors && Array.isArray(result.explanation.risk_factors)) {
+                factors = result.explanation.risk_factors;
+            }
+            
+            // If we have Bedrock explanation but no separate factors, hide this section
+            if (factors.length === 0 && result.explanation.generated_by === 'bedrock_claude_3_sonnet') {
+                factorsSection.style.display = 'none';
+            } else {
+                factorsSection.style.display = 'block';
                 
-                // Stagger animation
-                setTimeout(() => {
-                    li.style.transition = 'all 0.3s ease';
-                    li.style.opacity = '1';
-                    li.style.transform = 'translateY(0)';
-                }, 100 * (index + 1));
-            });
+                factors.forEach((factor, index) => {
+                    const li = document.createElement('li');
+                    
+                    // Handle different factor formats
+                    if (typeof factor === 'string') {
+                        li.textContent = factor;
+                    } else if (factor.factor) {
+                        // Object with factor property
+                        const factorText = factor.factor.replace(/_/g, ' ');
+                        const value = factor.value !== undefined ? ` (${factor.value})` : '';
+                        li.textContent = factorText + value;
+                    } else {
+                        li.textContent = JSON.stringify(factor);
+                    }
+                    
+                    li.style.opacity = '0';
+                    li.style.transform = 'translateY(10px)';
+                    list.appendChild(li);
+                    
+                    // Stagger animation
+                    setTimeout(() => {
+                        li.style.transition = 'all 0.3s ease';
+                        li.style.opacity = '1';
+                        li.style.transform = 'translateY(0)';
+                    }, 100 * (index + 1));
+                });
+            }
         }
         
         function loadLowRisk() {

@@ -108,6 +108,15 @@ Resources:
                 Resource:
                   - !Sub 'arn:aws:bedrock:*::foundation-model/anthropic.claude-sonnet-4-*'
                   - !Sub 'arn:aws:bedrock:*::foundation-model/anthropic.claude-3-*'
+        - PolicyName: SageMakerAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - sagemaker:InvokeEndpoint
+                Resource:
+                  - !Sub 'arn:aws:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint/*'
         - PolicyName: DynamoDBAccess
           PolicyDocument:
             Version: '2012-10-17'
@@ -151,6 +160,7 @@ Resources:
       Environment:
         Variables:
           PREDICTIONS_TABLE: !Ref PredictionsTable
+          SAGEMAKER_ENDPOINT: return-abuse-prod-endpoint
           ENVIRONMENT: !Ref Environment
           DATA_LAKE_BUCKET: !Ref DataLakeBucket
       Code:

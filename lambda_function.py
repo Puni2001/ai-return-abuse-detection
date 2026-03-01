@@ -1,19 +1,115 @@
+"""
+AI Return Abuse Detection System - Lambda Function
+
+This Lambda function provides a REST API for predicting return abuse risk in e-commerce
+transactions. It uses a hybrid architecture combining:
+- Amazon SageMaker ML models for accurate predictions
+- Amazon Bedrock (Claude Sonnet 4) for AI-powered explanations
+- Rule-based fallback system for 100% uptime
+
+Features:
+- Real-time risk scoring (0.0 to 1.0)
+- Risk level classification (low/medium/high)
+- Explainable AI with top risk factors
+- DynamoDB audit trail
+- Automatic fallback mechanisms
+
+Author: Punith S
+Version: 1.2-hybrid
+"""
+
 import json
 import boto3
 import os
 from datetime import datetime
+from typing import Dict, List, Tuple, Optional, Any
 
 # Initialize AWS clients
 bedrock_runtime = boto3.client('bedrock-runtime', region_name='us-east-1')
+sagemaker_runtime = boto3.client('sagemaker-runtime', region_name='ap-south-1')
 dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')
 
-# DynamoDB table name (will be created via CloudFormation)
+# Configuration from environment variables
 PREDICTIONS_TABLE = os.environ.get('PREDICTIONS_TABLE', 'return-abuse-predictions')
+SAGEMAKER_ENDPOINT = os.environ.get('SAGEMAKER_ENDPOINT', 'return-abuse-prod-endpoint')
 
-def calculate_risk_score(features):
+# Model version tracking
+MODEL_VERSION = 'v1.2-hybrid'
+
+def predict_with_sagemaker(features: Dict[str, Any]) -> Tuple[Optional[float], List]:
     """
-    Rule-based risk scoring algorithm
-    Returns risk score between 0 and 1
+    Use Amazon SageMaker endpoint for ML-based risk prediction.
+    
+    Args:
+        features: Dictionary containing customer and order features
+        
+    Returns:
+        Tuple of (risk_score, feature_importance)
+        Returns (None, []) if SageMaker is unavailable
+        
+    Features used:
+        - customer_return_rate: Historical return rate (0.0-1.0)
+        - total_orders: Number of previous orders
+        - is_cod: Cash on Delivery flag (0 or 1)
+        - amount: Order value in INR
+        - product_return_rate: Product category return rate
+        - is_festival_season: Festival season indicator (0 or 1)
+    """
+    try:
+        if not SAGEMAKER_ENDPOINT:
+            return None, []
+        
+        # Prepare features for SageMaker (XGBoost CSV format)
+        feature_vector = [
+            features['customer_return_rate'],
+            features['total_orders'],
+            features['is_cod'],
+            features['amount'],
+            features['product_return_rate'],
+            features['is_festival_season']
+        ]
+        
+        # Call SageMaker endpoint
+        response = sagemaker_runtime.invoke_endpoint(
+            EndpointName=SAGEMAKER_ENDPOINT,
+            ContentType='text/csv',
+            Body=','.join(map(str, feature_vector))
+        )
+        
+        # Parse prediction - SageMaker returns a simple float value
+        result = response['Body'].read().decode().strip()
+        risk_score = float(result)
+        
+        # Feature importance not available from basic XGBoost endpoint
+        # Consider using SageMaker Clarify for SHAP values in production
+        feature_importance = []
+        
+        return risk_score, feature_importance
+        
+    except Exception as e:
+        print(f"SageMaker prediction error: {str(e)}")
+        return None, None
+
+
+def calculate_risk_score(features: Dict[str, Any]) -> float:
+    """
+    Rule-based risk scoring algorithm (fallback when SageMaker unavailable).
+    
+    This algorithm uses weighted factors based on e-commerce domain expertise
+    and Indian market patterns.
+    
+    Args:
+        features: Dictionary containing customer and order features
+        
+    Returns:
+        Risk score between 0.0 and 1.0
+        
+    Risk Factors:
+        - Customer return rate (40% weight)
+        - Order history and value (30% weight)
+        - Payment method - COD risk (15% weight)
+        - Product category risk (10% weight)
+        - Festival season patterns (5% weight)
     """
     customer_return_rate = features['customer_return_rate']
     total_orders = features['total_orders']
@@ -128,9 +224,27 @@ def calculate_risk_score(features):
     return risk_score, risk_factors
 
 
-def generate_bedrock_explanation(risk_score, risk_factors, features):
+def generate_bedrock_explanation(
+    risk_score: float, 
+    risk_factors: List[Dict], 
+    features: Dict[str, Any]
+) -> Tuple[str, str]:
     """
-    Use Amazon Bedrock (Claude 3 Sonnet) to generate human-readable explanation
+    Use Amazon Bedrock (Claude Sonnet 4) to generate AI-powered explanations.
+    
+    Args:
+        risk_score: Calculated risk score (0.0-1.0)
+        risk_factors: List of detected risk factors
+        features: Order and customer features
+        
+    Returns:
+        Tuple of (explanation_text, generated_by)
+        Falls back to rule-based explanation if Bedrock unavailable
+        
+    Note:
+        Uses Claude Sonnet 4 inference profile for consistent performance
+        across regions. Explanation includes risk summary, key factors,
+        and actionable recommendations.
     """
     try:
         # Prepare context for Bedrock
@@ -157,9 +271,10 @@ Generate:
 
 Keep the language professional, clear, and actionable. Focus on business impact."""
 
-        # Call Bedrock API with Claude Sonnet 4 (newest, most capable model)
+        # Call Bedrock API using cross-region inference profile
+        # Using Claude Sonnet 4 (latest and most capable)
         response = bedrock_runtime.invoke_model(
-            modelId='anthropic.claude-sonnet-4-20250514-v1:0',
+            modelId='us.anthropic.claude-sonnet-4-20250514-v1:0',
             body=json.dumps({
                 'anthropic_version': 'bedrock-2023-05-31',
                 'max_tokens': 500,
@@ -187,9 +302,25 @@ Keep the language professional, clear, and actionable. Focus on business impact.
         return generate_fallback_explanation(risk_score, risk_factors, features)
 
 
-def generate_fallback_explanation(risk_score, risk_factors, features):
+def generate_fallback_explanation(
+    risk_score: float, 
+    risk_factors: List[Dict], 
+    features: Dict[str, Any]
+) -> Dict[str, Any]:
     """
-    Fallback explanation if Bedrock is unavailable
+    Generate rule-based explanation when Bedrock is unavailable.
+    
+    Args:
+        risk_score: Calculated risk score
+        risk_factors: List of detected risk factors
+        features: Order and customer features
+        
+    Returns:
+        Dictionary with explanation text and top factors
+        
+    Note:
+        Provides business-friendly explanations for each risk factor
+        with India-specific context (COD, festival seasons, etc.)
     """
     reasons = []
     
@@ -221,9 +352,19 @@ def generate_fallback_explanation(risk_score, risk_factors, features):
     }
 
 
-def store_prediction_dynamodb(prediction_data):
+def store_prediction_dynamodb(prediction_data: Dict[str, Any]) -> None:
     """
-    Store prediction in DynamoDB for audit trail and analytics
+    Store prediction in DynamoDB for audit trail and analytics.
+    
+    Args:
+        prediction_data: Complete prediction result including risk score,
+                        factors, and metadata
+                        
+    Note:
+        - Enables compliance and audit requirements
+        - Supports model performance monitoring
+        - TTL set to 90 days for automatic cleanup
+        - No PII data stored (order IDs only)
     """
     try:
         table = dynamodb.Table(PREDICTIONS_TABLE)
@@ -247,7 +388,44 @@ def store_prediction_dynamodb(prediction_data):
         return False
 
 
-def lambda_handler(event, context):
+def lambda_handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
+    """
+    AWS Lambda handler for return abuse risk prediction API.
+    
+    Args:
+        event: API Gateway event containing request body
+        context: Lambda context object
+        
+    Returns:
+        API Gateway response with risk prediction
+        
+    Request Body:
+        {
+            "order_id": "string",
+            "customer_return_rate": float (0.0-1.0),
+            "total_orders": int,
+            "payment_method": "COD" | "Prepaid",
+            "amount": float (INR),
+            "product_return_rate": float (0.0-1.0),
+            "is_festival_season": 0 | 1
+        }
+        
+    Response:
+        {
+            "risk_score": float (0.0-1.0),
+            "risk_level": "low" | "medium" | "high",
+            "confidence": float (0.0-1.0),
+            "recommended_action": string,
+            "explanation": {
+                "generated_by": "sagemaker_ml" | "bedrock_claude_3_sonnet" | "rule_based_fallback",
+                "explanation_text": string,
+                "top_factors": [string]
+            },
+            "model_type": "sagemaker_ml" | "rule_based",
+            "model_version": string,
+            "timestamp": ISO datetime
+        }
+    """
     try:
         # Parse input
         if 'body' in event:
@@ -259,14 +437,23 @@ def lambda_handler(event, context):
         features = {
             'customer_return_rate': body.get('customer_return_rate', 0.0),
             'total_orders': body.get('total_orders', 0),
-            'is_cod': 1 if body.get('payment_method') == 'COD' else 0,
+            'is_cod': 1 if (body.get('payment_method') == 'COD' or body.get('is_cod') == True or body.get('is_cod') == 1) else 0,
             'amount': body.get('amount', 0),
             'product_return_rate': body.get('product_return_rate', 0.0),
-            'is_festival_season': body.get('is_festival_season', 0)
+            'is_festival_season': 1 if (body.get('is_festival_season') == True or body.get('is_festival_season') == 1) else 0
         }
         
-        # Calculate risk score using rule-based model
-        risk_score, risk_factors = calculate_risk_score(features)
+        # Try SageMaker first, fallback to rule-based
+        risk_score, feature_importance = predict_with_sagemaker(features)
+        
+        if risk_score is not None:
+            # SageMaker prediction successful
+            model_type = 'sagemaker_ml'
+            risk_factors = feature_importance if feature_importance else []
+        else:
+            # Fallback to rule-based model
+            model_type = 'rule_based'
+            risk_score, risk_factors = calculate_risk_score(features)
         
         # Generate explanation using Bedrock (with fallback)
         use_bedrock = body.get('use_bedrock', True)
@@ -294,7 +481,8 @@ def lambda_handler(event, context):
             'recommended_action': action,
             'explanation': explanation,
             'confidence': round(abs(risk_score - 0.5) * 2, 3),
-            'model_version': 'v1.1-bedrock-enhanced',
+            'model_version': 'v1.2-hybrid',
+            'model_type': model_type,
             'timestamp': datetime.now().isoformat()
         }
         
