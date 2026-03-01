@@ -87,5 +87,5 @@ ai-return-abuse-detection/
 
 ## Team
 
-- **Punith S** - Lead Developer
-- **Yadoji Muralidhar Bokare** - Testing & Validation
+- **Punith S** - Lead Developer & Architecture
+- **Yadoji Muralidhar Bokare** - Tester

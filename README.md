@@ -239,7 +239,7 @@ See [docs/aws-cost-estimate.md](docs/aws-cost-estimate.md) for details.
 ## Team
 
 - **Punith S** - Lead Developer & Architecture
-- **Yadoji Muralidhar Bokare** - Testing & Validation
+- **Yadoji Muralidhar Bokare** - Tester
 
 ## Live Demo
 
