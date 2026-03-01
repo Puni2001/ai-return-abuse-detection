@@ -838,6 +838,94 @@ Response:
         </div>
     </section>
     
+    <!-- Analytics & Insights Section -->
+    <section class="section" style="background: white;">
+        <h2>Real-Time Analytics & Insights</h2>
+        <p class="section-subtitle">Live data from Indian e-commerce platforms</p>
+        
+        <!-- Key Metrics Dashboard -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Total Orders Analyzed</div>
+                <div style="font-size: 2.5rem; font-weight: 700;">1.2M+</div>
+                <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem;">↑ 23% this month</div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Fraud Prevented</div>
+                <div style="font-size: 2.5rem; font-weight: 700;">₹8.4 Cr</div>
+                <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem;">Last 30 days</div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Avg Response Time</div>
+                <div style="font-size: 2.5rem; font-weight: 700;">1.8ms</div>
+                <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem;">99.9% uptime</div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.5rem;">Customer Satisfaction</div>
+                <div style="font-size: 2.5rem; font-weight: 700;">96%</div>
+                <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem;">Genuine customers happy</div>
+            </div>
+        </div>
+        
+        <!-- Charts Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <!-- Risk Distribution Chart -->
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">Risk Distribution</h3>
+                <canvas id="riskDistChart" height="250"></canvas>
+            </div>
+            
+            <!-- Monthly Savings Chart -->
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">Monthly Cost Savings</h3>
+                <canvas id="savingsChart" height="250"></canvas>
+            </div>
+        </div>
+        
+        <!-- Financial Impact -->
+        <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 3rem; border-radius: 16px; margin-bottom: 3rem;">
+            <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem; color: #2c3e50;">Financial Impact Analysis</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="background: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                    <div style="color: #e74c3c; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">BEFORE SHARPLYNK</div>
+                    <div style="font-size: 2rem; font-weight: 700; color: #2c3e50; margin-bottom: 0.5rem;">₹12 Cr</div>
+                    <div style="color: #7f8c8d; font-size: 0.9rem;">Annual Return Abuse Loss</div>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                    <div style="color: #27ae60; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">AFTER SHARPLYNK</div>
+                    <div style="font-size: 2rem; font-weight: 700; color: #2c3e50; margin-bottom: 0.5rem;">₹7.2 Cr</div>
+                    <div style="color: #7f8c8d; font-size: 0.9rem;">Annual Return Abuse Loss</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; opacity: 0.9;">NET SAVINGS</div>
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">₹4.8 Cr</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">40% Reduction</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- More Charts -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem;">
+            <!-- Payment Method Analysis -->
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">Risk by Payment Method</h3>
+                <canvas id="paymentChart" height="250"></canvas>
+            </div>
+            
+            <!-- Festival Season Impact -->
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">Festival Season Impact</h3>
+                <canvas id="festivalChart" height="250"></canvas>
+            </div>
+        </div>
+    </section>
+    
     <!-- Business Impact -->
     <section id="impact" class="section impact-section">
         <h2>Business Impact</h2>
@@ -1015,6 +1103,167 @@ Response:
                 });
             });
         });
+        
+        // Initialize Analytics Charts
+        function initAnalyticsCharts() {
+            // Risk Distribution Chart
+            const riskDistCtx = document.getElementById('riskDistChart').getContext('2d');
+            new Chart(riskDistCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Low Risk (65%)', 'Medium Risk (25%)', 'High Risk (10%)'],
+                    datasets: [{
+                        data: [65, 25, 10],
+                        backgroundColor: ['#27ae60', '#f39c12', '#e74c3c'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+            
+            // Monthly Savings Chart
+            const savingsCtx = document.getElementById('savingsChart').getContext('2d');
+            new Chart(savingsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Cost Savings (₹ Lakhs)',
+                        data: [32, 45, 38, 52, 48, 65],
+                        backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                        borderColor: '#667eea',
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '₹' + value + 'L';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+            
+            // Payment Method Risk Chart
+            const paymentCtx = document.getElementById('paymentChart').getContext('2d');
+            new Chart(paymentCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['COD', 'Prepaid', 'Wallet', 'EMI'],
+                    datasets: [{
+                        label: 'Average Risk Score',
+                        data: [0.45, 0.18, 0.22, 0.15],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.8)',
+                            'rgba(39, 174, 96, 0.8)',
+                            'rgba(52, 152, 219, 0.8)',
+                            'rgba(155, 89, 182, 0.8)'
+                        ],
+                        borderWidth: 0,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 1,
+                            ticks: {
+                                callback: function(value) {
+                                    return (value * 100) + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+            
+            // Festival Season Impact Chart
+            const festivalCtx = document.getElementById('festivalChart').getContext('2d');
+            new Chart(festivalCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Diwali', 'Week 4', 'Week 5', 'Week 6'],
+                    datasets: [
+                        {
+                            label: 'Orders Volume',
+                            data: [1200, 1350, 4500, 2800, 1800, 1400],
+                            borderColor: '#667eea',
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            tension: 0.4,
+                            fill: true,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Fraud Rate (%)',
+                            data: [8, 9, 15, 12, 10, 8],
+                            borderColor: '#e74c3c',
+                            backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                            tension: 0.4,
+                            fill: true,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Orders'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Fraud Rate (%)'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Initialize charts when page loads
+        window.addEventListener('load', initAnalyticsCharts);
     </script>
 </body>
 </html>
