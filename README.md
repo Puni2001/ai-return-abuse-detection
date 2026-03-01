@@ -18,9 +18,10 @@ AI-powered system that predicts return abuse before it happens. Built specifical
 ### ✨ Key Highlights
 - **40% fraud reduction** with real-time risk scoring
 - **2ms response time** via AWS Lambda
+- **ML-powered** - Amazon SageMaker XGBoost model
 - **India-first** - COD, festivals, regional patterns
-- **Explainable AI** - clear reasons for every decision
-- **Zero setup cost** - AWS Free Tier
+- **Explainable AI** - SHAP values for every decision
+- **Production-ready** - Trained model deployed on SageMaker endpoint
 
 ---
 
@@ -130,7 +131,10 @@ curl -X POST https://nglukkm7m9.execute-api.ap-south-1.amazonaws.com/prod/risk-s
 
 **Current:**
 - AWS Lambda (Python 3.11) - Serverless compute
+- Amazon SageMaker - ML model training and deployment
 - API Gateway - REST API
+- DynamoDB - Predictions storage
+- S3 - Data lake
 - Netlify - Frontend hosting
 - Chart.js - Analytics visualization
 
