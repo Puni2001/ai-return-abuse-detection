@@ -1,0 +1,21 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circle background -->
+  <circle cx="100" cy="100" r="95" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+  
+  <!-- Diamond/Arrow shape -->
+  <g transform="translate(100, 80)">
+    <!-- Left arrow -->
+    <path d="M -50 0 L -20 -30 L -20 -25 L -45 0 L -20 25 L -20 30 Z" 
+          fill="none" stroke="#000" stroke-width="8" stroke-linejoin="miter"/>
+    
+    <!-- Right arrow -->
+    <path d="M 50 0 L 20 -30 L 20 -25 L 45 0 L 20 25 L 20 30 Z" 
+          fill="none" stroke="#000" stroke-width="8" stroke-linejoin="miter"/>
+  </g>
+  
+  <!-- Text: Sharplynk -->
+  <text x="100" y="155" font-family="'Brush Script MT', cursive, serif" 
+        font-size="32" text-anchor="middle" fill="#000" font-style="italic">
+    Sharplynk
+  </text>
+</svg>
