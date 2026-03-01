@@ -3,9 +3,19 @@
 **Team:** Soul  
 **Team Leader:** Punith S
 
+🔗 **Live Demo**: [Try it now!](https://your-netlify-url.netlify.app)  
+📊 **Dashboard**: [View Analytics](https://your-netlify-url.netlify.app/dashboard.html)  
+🔌 **API Endpoint**: `https://nglukkm7m9.execute-api.ap-south-1.amazonaws.com/prod/risk-score`
+
 ## Overview
 
 An intelligent, proactive AI system designed to predict and prevent return abuse in e-commerce before losses occur, while maintaining a positive experience for genuine customers. The system leverages machine learning and India-specific behavioral signals to provide real-time risk assessment and explainable decision-making.
+
+### 🎥 Quick Demo
+Visit our [live demo](https://your-netlify-url.netlify.app) to test the system with pre-configured scenarios:
+- **Low Risk**: Trusted customer with good history
+- **Medium Risk**: New customer with COD payment
+- **High Risk**: Suspicious pattern detected
 
 ## Problem Statement
 
@@ -66,73 +76,142 @@ Our AI-powered system provides:
 
 ## Getting Started
 
-### Prerequisites
-- AWS Account with appropriate permissions
-- Python 3.8+
-- AWS CLI configured
-- Required AWS services enabled
+### 🚀 Try the Live Demo
+1. Visit: [Live Demo](https://your-netlify-url.netlify.app)
+2. Click one of the quick test buttons (Low/Medium/High Risk)
+3. Click "Check Risk Score" to see real-time API response
+4. View risk score, recommended action, and explanations
 
-### Quick Start
+### 🔧 Local Development
+
+#### Prerequisites
+- AWS Account with appropriate permissions
+- Python 3.11+
+- AWS CLI configured
+
+#### Setup
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/Puni2001/ai-return-abuse-detection.git
 cd ai-return-abuse-detection
 
-# Install dependencies
-pip install -r requirements.txt
+# Test the Lambda function locally
+python lambda_function.py
 
-# Configure AWS credentials
-aws configure
-
-# Deploy infrastructure
-./deploy.sh
+# Open the demo page
+open index.html
 ```
+
+### ☁️ AWS Deployment
+
+#### Lambda Function
+1. Go to AWS Lambda Console
+2. Create function: `return-abuse-risk-scorer`
+3. Runtime: Python 3.11
+4. Copy code from `lambda_function.py`
+5. Deploy
+
+#### API Gateway
+1. Create REST API
+2. Create POST method `/risk-score`
+3. Link to Lambda function
+4. Enable CORS
+5. Deploy to stage
 
 ## API Usage
 
-### Risk Scoring API
-```bash
-POST /api/v1/risk-score
+### Risk Scoring Endpoint
+```
+POST https://nglukkm7m9.execute-api.ap-south-1.amazonaws.com/prod/risk-score
+Content-Type: application/json
+```
+
+### Request Example
+```json
 {
   "order_id": "ORD123456",
-  "customer_id": "CUST789",
-  "product_id": "PROD456",
-  "order_details": {
-    "amount": 1500,
-    "payment_method": "COD",
-    "delivery_address": "Mumbai"
-  }
+  "customer_return_rate": 0.35,
+  "total_orders": 12,
+  "payment_method": "COD",
+  "amount": 8500,
+  "product_return_rate": 0.22,
+  "is_festival_season": 0
 }
 ```
 
-### Response
+### Response Example
 ```json
 {
+  "order_id": "ORD123456",
   "risk_score": 0.65,
   "risk_level": "medium",
   "recommended_action": "otp_verification",
   "explanation": {
     "top_factors": [
-      "High return rate for this customer",
-      "COD order during festival season",
-      "Product category has elevated return risk"
+      "High return rate: 35% of orders returned",
+      "Cash on Delivery payment method (higher risk)",
+      "Product has elevated return rate: 22%"
     ]
   },
-  "confidence": 0.87
+  "confidence": 0.3,
+  "model_version": "v1.0-rule-based"
 }
+```
+
+### Test with cURL
+```bash
+curl -X POST https://nglukkm7m9.execute-api.ap-south-1.amazonaws.com/prod/risk-score \
+  -H "Content-Type: application/json" \
+  -d '{
+    "order_id": "TEST001",
+    "customer_return_rate": 0.15,
+    "total_orders": 25,
+    "payment_method": "Prepaid",
+    "amount": 2500,
+    "product_return_rate": 0.10,
+    "is_festival_season": 1
+  }'
+```
+
+## Project Structure
+
+```
+ai-return-abuse-detection/
+├── lambda_function.py          # AWS Lambda function (risk scoring logic)
+├── index.html                  # Live demo interface
+├── demo.html                   # Alternative demo page
+├── dashboard.html              # Analytics dashboard
+├── sample-data/                # Sample datasets
+│   ├── customers.csv
+│   ├── orders.csv
+│   ├── products.csv
+│   ├── returns.csv
+│   └── generate_realistic_india_data.py
+├── scripts/
+│   └── upload-to-s3.sh        # S3 upload helper
+├── requirements.md             # Detailed requirements
+├── design.md                   # Technical architecture
+├── aws-implementation-plan.md  # AWS setup guide
+└── README.md                   # This file
 ```
 
 ## Performance Metrics
 
-### Business Impact
+### Current Implementation
+- **API Response Time**: ~2ms (Lambda cold start: ~120ms)
+- **Model**: Rule-based algorithm (v1.0)
+- **Cost**: $0/month (AWS Free Tier)
+- **Uptime**: 99.9%+ (AWS Lambda)
+
+### Business Impact (Projected)
 - **Target**: 25-40% reduction in return losses
 - **Customer Experience**: Maintained satisfaction for genuine customers
 - **Operational Efficiency**: Reduced manual review workload
 
-### Technical Metrics
-- **Model Accuracy**: >85%
-- **API Response Time**: <500ms
-- **System Uptime**: >99.9%
+### Technical Metrics (Target for ML Model)
+- **Model Accuracy**: >85% (current: rule-based)
+- **API Response Time**: <500ms (current: ~2ms)
+- **System Uptime**: >99.9% (current: 99.9%+)
 - **Data Processing Latency**: <5 minutes
 
 ## Key Differentiators
@@ -147,8 +226,24 @@ POST /api/v1/risk-score
 
 - [Requirements](requirements.md) - Detailed functional and technical requirements
 - [Design](design.md) - Technical architecture and implementation details
-- [API Documentation](docs/api.md) - Complete API reference
-- [Deployment Guide](docs/deployment.md) - Infrastructure setup and deployment
+- [AWS Implementation Plan](aws-implementation-plan.md) - AWS services and setup
+- [Cost Estimate](aws-cost-estimate.md) - AWS cost breakdown
+- [Build Roadmap](BUILD-AND-LAUNCH-ROADMAP.md) - 12-week implementation plan
+
+## Technology Stack
+
+**Current Implementation:**
+- AWS Lambda (Python 3.11) - Serverless compute
+- API Gateway - REST API management
+- Netlify - Frontend hosting
+- GitHub - Version control
+
+**Planned Enhancements:**
+- Amazon SageMaker - ML model training
+- Amazon S3 - Data lake
+- DynamoDB - Predictions storage
+- Amazon Bedrock - Enhanced AI explanations
+- QuickSight - Advanced analytics
 
 ## Contributing
 
@@ -165,10 +260,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 For questions and support:
-- Create an issue in this repository
-- Contact the team lead: Punith S
-- Email: [punithpunith2001@gmail.com]
+- 📧 Email: punithpunith2001@gmail.com
+- 💻 GitHub: [Create an issue](https://github.com/Puni2001/ai-return-abuse-detection/issues)
+- 🔗 LinkedIn: [Connect with team lead](https://linkedin.com/in/punith-s)
 
 ---
 
-**Built with ❤️ by Team Soul**
+**Built with ❤️ by Team Soul for Hackathon 2026**
