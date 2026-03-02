@@ -53,6 +53,21 @@ response.json
 
 # Kiro
 .kiro/
+
+# Presentation & Submission files
+*.pdf
+*.pptx
+*.ppt
+*SCRIPT*.txt
+*SCRIPT*.md
+*PRESENTATION*.md
+*SLIDES*.md
+
+# Sample data (keep structure, ignore data files)
+sample-data/*.csv
+
+# AWS credentials
 .aws/
-*.csv
 credentials
+*.pem
+*.key
